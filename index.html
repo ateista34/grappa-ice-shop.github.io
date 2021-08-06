@@ -37,7 +37,7 @@
                 <div v-for="variant in variants" :key="variant.variantId">
                     <p @mouseover="image = variant.variantImage">{{ variant.variantColor }}</p>
                 </div>
-                <button  v-on:click="cart += 1" >Dodaj grappe do koszyka</button>
+                <button  v-on:click="cart += 1" v-on:click="ilosc_grappy -= 1" >Dodaj grappe do koszyka</button>
 
             </div>
 
