@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>__roomchat</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+
+    <div class="nav-bar"></div>
+    
+    <div id = "app">
+        <div class="cart">
+            <p>Koszyk({{ cart }})</p>
+        </div>
+        <div class="product">
+
+            <div class="product-image">
+                <img :src="image"> 
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+
+                Czy jest grappa ?:
+                <p v-if="ilosc_grappy >= 30">Jest Grappa</p>
+                <p v-else-if="ilosc_grappy < 30 && ilosc_grappy > 0">Malo Grappy</p>
+                <p v-else>Nie ma Grappy</p>
+
+                <br>
+                Składniki:
+                <ul >
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+
+                <div v-for="variant in variants" :key="variant.variantId">
+                    <p @mouseover="image = variant.variantImage">{{ variant.variantColor }}</p>
+                </div>
+                <button  v-on:click="cart += 1" >Dodaj grappe do koszyka</button>
+
+            </div>
+
+        </div>
+
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
