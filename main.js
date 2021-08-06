@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         product: 'Grappa Ice',
         image: 'grappa_blue.jpeg',
-        ilosc_grappy: 40,
+        ilosc_grappy: 100,
         details: ['grappa', 'ice', 'najsowosc'],
         variants: [
             {
